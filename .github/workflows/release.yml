@@ -18,7 +18,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: 21
 
       - name: Cache Maven packages
@@ -38,12 +38,10 @@ jobs:
       - name: Build JAR
         run: mvn -B clean package
 
-      - name: List target directory contents
-        run: ls -lh target
-
-      - name: Copy and rename JAR
+      - name: Copy and Rename Jar
         run: |
-          cp target/xaml-sorter-java-${{ steps.mvn_version.outputs.mvn_version }}-shaded.jar xamlSorter.Java-${{ steps.mvn_version.outputs.mvn_version }}.jar
+          cp target/xaml-sorter-java-${{ steps.mvn_version.outputs.mvn_version }}.jar \
+          xamlSorter.Java-${{ steps.mvn_version.outputs.mvn_version }}.jar
 
       - name: Upload JAR as artifact
         uses: actions/upload-artifact@v4
@@ -66,7 +64,7 @@ jobs:
       - name: Set up JDK (for jpackage)
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: 21
 
       - name: Package with jpackage (Windows)
@@ -110,7 +108,7 @@ jobs:
       - name: Set up JDK (for jpackage)
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: 21
 
       - name: Package with jpackage (Linux)
@@ -150,7 +148,7 @@ jobs:
       - name: Set up JDK (for jpackage)
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: "zulu"
           java-version: 21
 
       - name: Package with jpackage (macOS)
