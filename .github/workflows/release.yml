@@ -76,7 +76,6 @@ jobs:
             --main-jar xamlSorter.Java-${{ needs.build.outputs.mvn_version }}.jar ^
             --main-class chiloven.xamlsorter.Main ^
             --dest dist ^
-            --app-version ${{ needs.build.outputs.mvn_version }} ^
             --icon src/main/resources/icons/application/application-ico.ico ^
             --java-options "--enable-native-access=ALL-UNNAMED"
         shell: cmd
@@ -120,7 +119,6 @@ jobs:
             --main-jar xamlSorter.Java-${{ needs.build.outputs.mvn_version }}.jar \
             --main-class chiloven.xamlsorter.Main \
             --dest dist \
-            --app-version ${{ needs.build.outputs.mvn_version }} \
             --icon src/main/resources/icons/application/application-256x256.png \
             --java-options "--enable-native-access=ALL-UNNAMED"
 
@@ -160,7 +158,6 @@ jobs:
             --main-jar xamlSorter.Java-${{ needs.build.outputs.mvn_version }}.jar \
             --main-class chiloven.xamlsorter.Main \
             --dest dist \
-            --app-version ${{ needs.build.outputs.mvn_version }} \
             --icon src/main/resources/icons/application/application-icns.icns \
             --java-options "--enable-native-access=ALL-UNNAMED"
 
