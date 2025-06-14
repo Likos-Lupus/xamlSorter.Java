@@ -1,8 +1,10 @@
 name: Build & Attach Release Artifacts
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+  workflow_dispatch: # 允许手动触
 
 jobs:
   build:
@@ -35,6 +37,9 @@ jobs:
 
       - name: Build JAR
         run: mvn -B clean package
+
+      - name: List target directory contents
+        run: ls -lh target
 
       - name: Copy and rename JAR
         run: |
