@@ -161,6 +161,9 @@ jobs:
             --icon src/main/resources/icons/application/application-icns.icns \
             --java-options "--enable-native-access=ALL-UNNAMED"
 
+      - name: List dist directory (macOS)
+        run: ls -lh dist
+
       - name: Zip macOS app-image
         run: |
           cd dist && zip -r ../xamlSorter.Java-${{ needs.build.outputs.mvn_version }}-macos.zip xamlSorter.Java
